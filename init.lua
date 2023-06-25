@@ -30,8 +30,8 @@ vim.opt.colorcolumn = '80'
 -- Remaps --
 vim.g.mapleader = ' ' -- Make sure to set `mapleader` before lazy so your mappings are correct
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
-vim.keymap.set({ 'n', 'v' }, '<leader>y', [['+y]])
-vim.keymap.set('n', '<leader>Y', [['+Y]])
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
+vim.keymap.set('n', '<leader>Y', [["+Y]])
 
 -- Package manager --
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'

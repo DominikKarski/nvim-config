@@ -9,11 +9,6 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = '[U]ndo tree' 
 
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' })
 
--- Highlight same words options
-vim.api.nvim_set_hl(0, 'IlluminatedWordText', { link = 'Visual' })
-vim.api.nvim_set_hl(0, 'IlluminatedWordRead', { link = 'Visual' })
-vim.api.nvim_set_hl(0, 'IlluminatedWordWrite', { link = 'Visual' })
-
 require 'nvim-treesitter.configs'.setup {
     -- A list of parser names, or 'all' (the five listed parsers should always be installed)
     ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query', 'python', 'javascript', 'typescript' },
@@ -95,4 +90,14 @@ lsp.setup()
 
 vim.diagnostic.config({
     virtual_text = true
+})
+
+require('kanagawa').setup({
+    overrides = function(colors)
+        return {
+            IlluminatedWordText = { bg = colors.palette.winterYellow },
+            IlluminatedWordRead = { bg = colors.palette.winterYellow },
+            IlluminatedWordWrite = { bg = colors.palette.winterYellow },
+        }
+    end,
 })

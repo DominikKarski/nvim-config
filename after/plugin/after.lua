@@ -42,8 +42,15 @@ lsp.ensure_installed({
     'eslint',
     'rust_analyzer',
     'pyright',
-    --    'zls'
 })
+
+require('lspconfig').zls.setup {
+    cmd = {
+        "zls",
+        "--enable-debug-log",
+    },
+}
+
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
 

@@ -3,8 +3,6 @@ vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]i
 vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>gf', builtin.live_grep, { desc = '[G]rep [S]earch' })
 
-vim.cmd('colorscheme kanagawa')
-
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = '[U]ndo tree' })
 
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' })
@@ -101,3 +99,4 @@ require('kanagawa').setup({
         }
     end,
 })
+vim.cmd('colorscheme kanagawa')

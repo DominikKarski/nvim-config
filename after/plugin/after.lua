@@ -4,8 +4,8 @@ vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles
 vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>:', builtin.command_history, { desc = '[:] Command history' })
-vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently changed files' })
-vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>?', builtin.buffers, { desc = '[?] Find existing buffers' })
+vim.keymap.set('n', '<leader><space>', builtin.oldfiles, { desc = '[ ] Find recently changed files' })
 
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = '[U]ndo tree' })
 
@@ -104,3 +104,13 @@ require('kanagawa').setup({
     end,
 })
 vim.cmd('colorscheme kanagawa')
+
+local null_ls = require('null-ls')
+null_ls.setup({
+    sources = {
+        null_ls.builtins.formatting.prettierd.with({
+            filetypes = { 'html', 'json', 'yaml', 'markdown', 'css', 'scss', 'less', 'jsonc', 'toml' },
+            extra_args = { '--bracket-same-line' },
+        }),
+    },
+})

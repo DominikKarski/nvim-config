@@ -82,6 +82,7 @@ require('lazy').setup({
             { 'L3MON4D3/LuaSnip' },     -- Required
         }
     },
+    { 'jose-elias-alvarez/null-ls.nvim', lazy = true, dependencies = { 'nvim-lua/plenary.nvim' } },
     'nvim-treesitter/nvim-treesitter-context',
     {
         'nvim-lualine/lualine.nvim',
@@ -120,5 +121,6 @@ require('lazy').setup({
             end,
         },
     },
-    { 'numToStr/Comment.nvim', opts = {} },
+    { 'numToStr/Comment.nvim',           opts = {} },
+    { 'tpope/vim-surround' },
 })
